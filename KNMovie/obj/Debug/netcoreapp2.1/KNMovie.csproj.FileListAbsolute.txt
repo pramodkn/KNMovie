@@ -1,0 +1,14 @@
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\bin\Debug\netcoreapp2.1\KNMovie.deps.json
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\bin\Debug\netcoreapp2.1\KNMovie.runtimeconfig.json
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\bin\Debug\netcoreapp2.1\KNMovie.runtimeconfig.dev.json
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\bin\Debug\netcoreapp2.1\KNMovie.dll
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\bin\Debug\netcoreapp2.1\KNMovie.pdb
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.csprojAssemblyReference.cache
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.csproj.CoreCompileInputs.cache
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.RazorAssemblyInfo.cache
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.RazorAssemblyInfo.cs
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.AssemblyInfoInputs.cache
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.AssemblyInfo.cs
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.RazorTargetAssemblyInfo.cache
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.dll
+C:\PROJECT_M1042421\Assesment\KN\KNMovie\obj\Debug\netcoreapp2.1\KNMovie.pdb
