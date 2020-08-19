@@ -1,6 +1,7 @@
 ﻿using KNMovie.Core;
 using KNMovie.Core.Repositories;
 using KNMovie.Data.Repositories;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +11,16 @@ namespace KNMovie.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly MovieAPIContext _context;
         private MovieRepository _movieRepository;
+        private readonly IConfiguration _config;
 
-        public UnitOfWork(MovieAPIContext context)
+        public UnitOfWork(MovieAPIContext context, IConfiguration config)
         {
-            this._context = context;
+            _config = config;
+
         }
 
-
-        public IMovieRepository Movie => _movieRepository ?? new MovieRepository(_context);
-
-        public async Task<int> CommitAsync()
-        {
-            return await _context.SaveChangesAsync();
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+        public IMovieRepository Movie => _movieRepository ?? new MovieRepository(_config);
+        
     }
 }

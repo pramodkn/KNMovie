@@ -84,10 +84,13 @@ namespace KNMovie.Controllers
         [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult<Movie>> PostMovie(Movie movie)
         {
-            _context.Movie.Add(movie);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+            var returned = await _movieService.CreateMovie(movie);
+
+            //_context.Movie.Add(movie);
+            //await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetMovie", new { AffectedRow = returned }, movie);
         }
 
 

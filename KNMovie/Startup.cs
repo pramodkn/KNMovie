@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AspNetCore.Identity.Dapper;
 using KNMovie.Core.Repositories;
 using KNMovie.Core.Services;
 using KNMovie.Data;
@@ -40,9 +41,19 @@ namespace KNMovie
             services.AddDbContext<MovieAPIContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnectionStringMSSQL")));
 
             // For Identity
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<MovieAPIContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<ApplicationUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<MovieAPIContext>()
+            //    .AddDefaultTokenProviders();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(x =>
+            {
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+            })
+             .AddDapperStores(new SqlServerProvider(Configuration.GetConnectionString("ConnectionStringMSSQL")))
+             .AddDefaultTokenProviders();
+            
+
 
             // Adding Authentication
             services.AddAuthentication(options =>

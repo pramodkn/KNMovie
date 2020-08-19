@@ -1,5 +1,4 @@
-﻿using KNMovie.Data.Configuration;
-using KNMovie.Models;
+﻿using KNMovie.Models;
 using KNMovie.Models.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -17,9 +16,8 @@ namespace KNMovie.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.ApplyConfiguration(new RoleConfiguration());
-            builder.ApplyConfiguration(new AdminConfiguration());
-            builder.ApplyConfiguration(new UsersWithRolesConfig());
+
+
         }
 
         public DbSet<Movie> Movie { get; set; }

@@ -4,9 +4,8 @@ using System.Threading.Tasks;
 
 namespace KNMovie.Core.Repositories
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork 
     {
         IMovieRepository Movie { get; }
-        Task<int> CommitAsync();
     }
 }

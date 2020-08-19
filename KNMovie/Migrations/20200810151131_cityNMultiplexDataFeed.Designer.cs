@@ -4,14 +4,16 @@ using KNMovie.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KNMovie.Migrations
 {
     [DbContext(typeof(MovieAPIContext))]
-    partial class MovieAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20200810151131_cityNMultiplexDataFeed")]
+    partial class cityNMultiplexDataFeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +108,7 @@ namespace KNMovie.Migrations
                     b.ToTable("AspNetUsers");
 
                     b.HasData(
-                        new { Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", AccessFailedCount = 0, ConcurrencyStamp = "f71ef7f9-187f-48ed-941b-b26a68cf1aad", Email = "admin@knmovie.com", EmailConfirmed = true, LockoutEnabled = false, NormalizedEmail = "admin@knmovie.com", NormalizedUserName = "Admin", PasswordHash = "AQAAAAEAACcQAAAAEPV9qKxMcsa55WGU7mJWTNOetYuECcLsyGdGfA0yDwpkT10Dl/bqga2xWGstYDKnJw==", PhoneNumber = "XXXXXXXXXXXXX", PhoneNumberConfirmed = true, SecurityStamp = "00000000-0000-0000-0000-000000000000", TwoFactorEnabled = false, UserName = "Admin" }
+                        new { Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", AccessFailedCount = 0, ConcurrencyStamp = "1856cdf3-82e1-4887-b1d1-14ace50bbcad", Email = "admin@knmovie.com", EmailConfirmed = true, LockoutEnabled = false, NormalizedEmail = "admin@knmovie.com", NormalizedUserName = "Admin", PasswordHash = "AQAAAAEAACcQAAAAENM2U2kvYEWIeMiwsLsknazxZUyCu2qcKhN9cH6mgY6HbUU1Hxj5p0a/+wUVXtjkrg==", PhoneNumber = "XXXXXXXXXXXXX", PhoneNumberConfirmed = true, SecurityStamp = "00000000-0000-0000-0000-000000000000", TwoFactorEnabled = false, UserName = "Admin" }
                     );
                 });
 
@@ -216,8 +218,6 @@ namespace KNMovie.Migrations
 
                     b.Property<int?>("MultiplexId");
 
-                    b.Property<DateTime>("StartTime");
-
                     b.HasKey("Id");
 
                     b.HasIndex("MovieId");
@@ -251,8 +251,8 @@ namespace KNMovie.Migrations
                     b.ToTable("AspNetRoles");
 
                     b.HasData(
-                        new { Id = "2301D884-221A-4E7D-B509-0113DCC043E1", ConcurrencyStamp = "69c6e13a-2395-4972-8966-81692f023b09", Name = "Admin", NormalizedName = "Admin" },
-                        new { Id = "01B168FE-810B-432D-9010-233BA0B380E9", ConcurrencyStamp = "5d30c925-7286-42fe-8441-ab5361c3d45e", Name = "Customer", NormalizedName = "Customer" }
+                        new { Id = "2301D884-221A-4E7D-B509-0113DCC043E1", ConcurrencyStamp = "7eab0602-45c9-4b30-98b5-fcf1aaa94a89", Name = "Admin", NormalizedName = "Admin" },
+                        new { Id = "01B168FE-810B-432D-9010-233BA0B380E9", ConcurrencyStamp = "8e6cb3cc-d629-4cb7-aa78-fb215ab4c12e", Name = "Customer", NormalizedName = "Customer" }
                     );
                 });
 

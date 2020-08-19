@@ -11,50 +11,44 @@ namespace KNMovie.Data.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly MovieAPIContext Context;
-
-        public Repository(MovieAPIContext context)
+        public virtual Task<int> AddAsync(TEntity entity)
         {
-            this.Context = context;
-        }
-        public async Task AddAsync(TEntity entity)
-        {
-            await Context.Set<TEntity>().AddAsync(entity);
+            throw new NotImplementedException();
         }
 
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities)
+        public Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
-            await Context.Set<TEntity>().AddRangeAsync(entities);
+            throw new NotImplementedException();
         }
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            return Context.Set<TEntity>().Where(predicate);
+            throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await Context.Set<TEntity>().ToListAsync();
+            throw new NotImplementedException();
         }
 
         public Task<TEntity> GetByIdAsync(int id)
         {
-            return Context.Set<TEntity>().FindAsync(id);
+            throw new NotImplementedException();
         }
 
         public void Remove(TEntity entity)
         {
-            Context.Set<TEntity>().Remove(entity);
+            throw new NotImplementedException();
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            Context.Set<TEntity>().RemoveRange(entities);
+            throw new NotImplementedException();
         }
 
         public Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            return Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
+            throw new NotImplementedException();
         }
     }
 

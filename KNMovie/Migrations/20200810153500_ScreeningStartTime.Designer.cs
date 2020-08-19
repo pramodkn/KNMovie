@@ -4,14 +4,16 @@ using KNMovie.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KNMovie.Migrations
 {
     [DbContext(typeof(MovieAPIContext))]
-    partial class MovieAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20200810153500_ScreeningStartTime")]
+    partial class ScreeningStartTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

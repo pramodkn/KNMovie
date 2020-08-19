@@ -17,7 +17,7 @@ namespace KNMovie.Models
 
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
-        public ICollection<Genre> Genre { get; set; }
+        public ICollection<Genre> Genre { get; set; } = new List<Genre>();
 
     }
 }

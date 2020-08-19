@@ -16,14 +16,12 @@ namespace KNMovie.Services
             this._unitOfWork = unitOfWork;
         }
 
-        public async Task<Movie> CreateMusic(Movie newMovie)
+        public async Task<int> CreateMovie(Movie newMovie)
         {
-            await _unitOfWork.Movie.AddAsync(newMovie);
-            await _unitOfWork.CommitAsync();
-            return newMovie;
+            return await _unitOfWork.Movie.AddAsync(newMovie);
         }
 
-        public Task DeleteMusic(Movie movie)
+        public Task DeleteMovie(Movie movie)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +36,7 @@ namespace KNMovie.Services
             throw new NotImplementedException();
         }
 
-        public Task UpdateMusic(Movie movieToBeUpdated, Movie movie)
+        public Task UpdateMovie(Movie movieToBeUpdated, Movie movie)
         {
             throw new NotImplementedException();
         }

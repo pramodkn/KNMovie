@@ -10,4 +10,20 @@ namespace KNMovie.Models.Authentication
     }
     public class Role : IdentityRole<Guid>
     { }
+    public class ApplicationRole
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string NormalizedName { get; set; }
+    }
+    public class ExtendedIdentityRole : IdentityRole<string>
+    {
+        public ExtendedIdentityRole() { }
+
+        public string Description { get; set; }
+    }
+
+
 }

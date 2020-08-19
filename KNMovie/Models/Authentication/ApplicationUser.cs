@@ -4,5 +4,7 @@ namespace KNMovie.Models.Authentication
 {
     public class ApplicationUser: IdentityUser
     {
+       
     }
+
 }

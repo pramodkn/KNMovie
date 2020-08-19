@@ -10,8 +10,8 @@ namespace KNMovie.Core.Services
     {
         Task<IEnumerable<Movie>> GetAllMovie();
         Task<Movie> GetMovieById(int id);
-        Task<Movie> CreateMusic(Movie newMovie);
-        Task UpdateMusic(Movie movieToBeUpdated, Movie movie);
-        Task DeleteMusic(Movie movie);
+        Task<int> CreateMovie(Movie newMovie);
+        Task UpdateMovie(Movie movieToBeUpdated, Movie movie);
+        Task DeleteMovie(Movie movie);
     }
 }

@@ -33,7 +33,7 @@ namespace KNMovie.Controllers
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var roleList = roleManager.Roles;
+
 
             var user = await userManager.FindByNameAsync(model.Username);
             if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
@@ -88,11 +88,15 @@ namespace KNMovie.Controllers
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
+            if (await roleManager.FindByNameAsync(UserRoles.Customer) == null)
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.Customer) { NormalizedName = UserRoles.Customer });
+
+            await userManager.AddToRoleAsync(user, UserRoles.Customer);
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
 
         [HttpPost]
-        [Authorize(Roles =UserRoles.Admin)]
+        [Authorize(Roles = UserRoles.Admin)]
         [Route("register-admin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterModel model)
         {
@@ -111,14 +115,11 @@ namespace KNMovie.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
             if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin) { NormalizedName = UserRoles.Admin });
             if (!await roleManager.RoleExistsAsync(UserRoles.Customer))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.Customer));
+                await roleManager.CreateAsync(new IdentityRole(UserRoles.Customer) { NormalizedName = UserRoles.Customer });
 
-            if (await roleManager.RoleExistsAsync(UserRoles.Admin))
-            {
-                await userManager.AddToRoleAsync(user, UserRoles.Admin);
-            }
+            await userManager.AddToRoleAsync(user, UserRoles.Admin);
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
